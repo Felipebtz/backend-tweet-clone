@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Tweet extends Model
+{
+    /** @use HasFactory<\Database\Factories\TweetFactory> */
+    use HasFactory;
+
+    public function user()
+    {
+        //Cada tweet pertece a um usuario
+        return $this->belongsTo(User::class);
+    }
+}
